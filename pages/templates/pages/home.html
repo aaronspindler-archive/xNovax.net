@@ -27,12 +27,27 @@
   {% for project in projects %}
   {% endfor %}
 
-  <h3>Books</h3>
+  <h3>Books I've Read</h3>
   <hr>
-  {% for book in books %}
-  {% endfor %}
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        {% for book in books %}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="card-img-top" width=200 src="{{book.cover.url}}"/>
+            <div class="card-body">
+              <a href="{% url 'book_details' book.pk %}"><h5 class="card-title">{{book.title}}</h5></a>
+              <h6 class="card-subtitle mb-2 text-muted">{{book.subtitle}}</h6>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 
-  <h3>Courses</h3>
+  <h3>Courses I've Taken</h3>
   <hr>
   {% for course in courses %}
   {% endfor %}
