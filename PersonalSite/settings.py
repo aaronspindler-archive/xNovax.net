@@ -26,7 +26,7 @@ SECRET_KEY = 'dt7m2x(qp(=fmni8p$ucjkpc_1ur2px9^&(e_61#_41e51nezf'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['secret-dusk-71706.herokuapp.com', 'xnovax.net', 'www.xnovax.net']
 
 
 # Application definition
