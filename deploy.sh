@@ -7,7 +7,7 @@ mv settings_prod.py settings.py
 
 cd ..
 git add .
-echo -n "Enter commit message"
+echo -n "Enter commit message: "
 read commitmsg
 git commit -m "$commitmsg"
 
