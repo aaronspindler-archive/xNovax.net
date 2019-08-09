@@ -23,6 +23,19 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['SECRET_KEY']
 
+#AWS
+AWS_STORAGE_BUCKET_NAME = 'personalsite-public'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+AWS_DEFAULT_ACL = None
+
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+
+DEFAULT_FILE_STORAGE = 'PersonalSite.storage_backends.MediaStorage'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
@@ -38,8 +51,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
     'blog.apps.BlogConfig',
     'pages.apps.PagesConfig',
+    'books.apps.BooksConfig',
+    'courses.apps.CoursesConfig',
 ]
 
 MIDDLEWARE = [

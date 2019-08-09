@@ -3,8 +3,9 @@ from django.db import models
 class Blog(models.Model):
     title = models.CharField(max_length=255)
     pub_date = models.DateTimeField()
+    external_link = models.URLField(null=True, blank=True)
     body = models.TextField()
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='blog/')
 
     def summary(self):
         return self.body[:280]
