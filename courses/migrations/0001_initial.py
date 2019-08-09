@@ -12,14 +12,15 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Blog',
+            name='Course',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=255)),
-                ('pub_date', models.DateTimeField()),
+                ('instituition', models.CharField(max_length=500)),
+                ('course_code', models.CharField(blank=True, max_length=30, null=True)),
+                ('description', models.TextField()),
                 ('external_link', models.URLField(blank=True, null=True)),
-                ('body', models.TextField()),
-                ('image', models.ImageField(upload_to='blog/')),
+                ('certificate_link', models.URLField(blank=True, null=True)),
             ],
         ),
     ]

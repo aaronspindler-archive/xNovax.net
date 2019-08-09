@@ -1,0 +1,25 @@
+{% extends 'pages/_base.html' %}
+{% load staticfiles %}
+
+{% block title %}Course | {{course.title}}{% endblock %}
+
+{% block content %}
+<div class="container">
+  {% if course.course_code %}
+  <h3>{{course.course_code}} - {{course.title}}</h3>
+  {% else %}
+  <h3>{{course.title}}</h3>
+  {% endif %}
+
+  <h6 class="text-muted">From: {{course.instituition}}</h6>
+  <p>Description: {{course.description}}</p>
+
+  {% if course.external_link %}
+  <a class="btn btn-info" href="{{course.external_link}}">Link</a>
+  {% endif %}
+
+  {% if course.certificate_link %}
+  <a class="btn btn-info" href="{{course.certificate_link}}">Certificate</a>
+  {% endif %}
+</div>
+{% endblock %}

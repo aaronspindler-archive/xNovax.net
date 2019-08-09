@@ -21,40 +21,70 @@
   </div>
 </section>
 <div class="container">
+  <p class="text-center"><a href="#projects">Projects</a> - <a href="#books">Books</a> - <a href="#courses">Courses</a> - <a href="#blog">Blog</a></p>
+  <a name="projects"><h3>Projects</h3></>
+    <hr>
+    {% for project in projects %}
+    {% endfor %}
 
-  <h3>Projects</h3>
-  <hr>
-  {% for project in projects %}
-  {% endfor %}
-
-  <h3>Books I've Read</h3>
-  <hr>
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <div class="row">
-        {% for book in books %}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" width=200 src="{{book.cover.url}}"/>
-            <div class="card-body">
-              <a href="{% url 'book_details' book.pk %}"><h5 class="card-title">{{book.title}}</h5></a>
-              <h6 class="card-subtitle mb-2 text-muted">{{book.subtitle}}</h6>
+    <a name="books"><h3>Books I've Read</h3></a>
+    <hr>
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          {% for book in books %}
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" width=200 src="{{book.cover.url}}"/>
+              <div class="card-body">
+                <a href="{% url 'book_detail' book.pk %}"><h5 class="card-title">{{book.title}}</h5></a>
+                <h6 class="card-subtitle mb-2 text-muted">{{book.subtitle}}</h6>
+              </div>
             </div>
           </div>
+          {% endfor %}
         </div>
-        {% endfor %}
       </div>
     </div>
+
+    <a name="courses"><h3>Courses I've Taken</h3></a>
+    <hr>
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+    {% for course in courses %}
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+          <a href="{% url 'course_detail' course.pk %}"><h5 class="card-title">{{course.title}}</h5></a>
+          <h6 class="card-subtitle mb-2 text-muted">{{course.instituition}}</h6>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
   </div>
-
-  <h3>Courses I've Taken</h3>
-  <hr>
-  {% for course in courses %}
-  {% endfor %}
-
-  <h3>Blog Posts</h3>
-  <hr>
-  {% for blog in blogs %}
-  {% endfor %}
 </div>
-{% endblock %}
+</div>
+
+    <a name="blog"><h3>Blog Posts</h3></a>
+    <hr>
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div class="row">
+          {% for blog in blogs %}
+          <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" width=200 src="{{blog.image.url}}"/>
+              <div class="card-body">
+                <a href="{% url 'blog_detail' blog.pk %}"><h5 class="card-title">{{blog.title}}</h5></a>
+                <h6 class="card-subtitle mb-2 text-muted">{{blog.pub_date_pretty}}</h6>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+  {% endblock %}

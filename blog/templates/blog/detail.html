@@ -1,17 +1,14 @@
-
-  {% extends 'pages/_base.html' %}
+{% extends 'pages/_base.html' %}
   {% load staticfiles %}
 
-  {% block title %}{{blog.title}}{% endblock %}
+  {% block title %}Blog | {{blog.title}}{% endblock %}
 
   {% block content %}
   <div class="container">
-    <br/>
+    <div class="text-center"><img class="img-fluid" src="{{blog.image.url}}" height = 500 width =500 /></div>
     <h3>{{blog.title}}</h3>
-    {{blog.pub_date}}
+    <div class="text-muted">{{blog.pub_date}}</div>
     <br/>
-    <img class="img-fluid" src="{{blog.image.url}}" height = 500 width =500 />
     <p>{{blog.body}}</p>
-    <hr/>
   <div/>
   {% endblock %}

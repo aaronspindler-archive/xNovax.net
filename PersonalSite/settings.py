@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'books.apps.BooksConfig',
     'courses.apps.CoursesConfig',
+    'projects.apps.ProjectsConfig',
 ]
 
 MIDDLEWARE = [
