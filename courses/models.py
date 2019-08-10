@@ -9,4 +9,4 @@ class Course(models.Model):
     certificate_link = models.URLField(null=True, blank=True)
 
     def __str__(self):
-        return self.title;
+        return self.title

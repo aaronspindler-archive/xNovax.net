@@ -14,4 +14,4 @@ class Blog(models.Model):
         return self.pub_date.strftime('%b %e, %Y')
 
     def __str__(self):
-        return self.title;
+        return self.title
