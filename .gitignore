@@ -6,6 +6,9 @@ __pycache__/
 PersonalSite/settings_prod.py
 PersonalSite/settings_dev.py
 
+# Custom
+.idea/
+
 # C extensions
 *.so
 
