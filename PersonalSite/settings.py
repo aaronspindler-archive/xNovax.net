@@ -37,6 +37,7 @@ INSTALLED_APPS = [
 	'courses.apps.CoursesConfig',
 	'projects.apps.ProjectsConfig',
 	'security.apps.SecurityConfig',
+	'utils.apps.UtilsConfig',
 ]
 
 MIDDLEWARE = [
