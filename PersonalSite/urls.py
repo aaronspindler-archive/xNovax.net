@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 import pages.views
@@ -17,5 +17,4 @@ urlpatterns = [
     path('tools/shorten', tools.views.url_shortener, name='url_shortener'),
     path('<str:pk>/', tools.views.url_shortened, name='url_shortened'),
     path('password', tools.views.password_generator, name='password_generator'),
-
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

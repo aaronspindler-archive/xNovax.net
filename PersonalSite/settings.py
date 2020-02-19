@@ -39,6 +39,7 @@ INSTALLED_APPS = [
 	'security.apps.SecurityConfig',
 	'utils.apps.UtilsConfig',
 	'tools.apps.ToolsConfig',
+	'crispy_forms',
 ]
 
 MIDDLEWARE = [

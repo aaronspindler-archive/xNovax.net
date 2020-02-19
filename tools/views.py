@@ -1,8 +1,13 @@
 from django.shortcuts import render
+from .forms import ShortenURLForm
 
 
 def url_shortener(request):
-	return render(request, 'tools/url_shortener.html')
+	form = ShortenURLForm()
+	if request.method == 'POST':
+		pass
+
+	return render(request, 'tools/url_shortener.html', {'form': form})
 
 
 def url_shortened(request, pk):

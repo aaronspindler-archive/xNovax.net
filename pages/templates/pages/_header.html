@@ -1,11 +1,12 @@
 {% load static %}
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="{% url 'home' %}"><img src="{% static 'pages/logo.PNG' %}" height=35 width=35> xNovax.net</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
+    <div class="collapse navbar-collapse" id="navbar">
         <ul class="navbar-nav">
             <li class="nav-item active">
                 <a class="nav-link" href="{% url 'home' %}">Home</a>
