@@ -1,9 +1,12 @@
 from django.db import models
 
+
 class Technology(models.Model):
     name = models.CharField(max_length=500)
+
     def __str__(self):
         return self.name
+
 
 class Project(models.Model):
     title = models.CharField(max_length=500)
