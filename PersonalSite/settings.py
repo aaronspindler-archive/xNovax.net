@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 	'projects.apps.ProjectsConfig',
 	'security.apps.SecurityConfig',
 	'utils.apps.UtilsConfig',
+	'tools.apps.ToolsConfig',
 ]
 
 MIDDLEWARE = [
