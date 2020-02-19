@@ -10,4 +10,4 @@ def home(request):
 	projects = Project.objects.all()
 	books = Book.objects.all()
 	courses = Course.objects.all()
-	return render(request, 'pages/home.html', {'projects': projects, 'books': books, 'courses': courses, 'posts':posts})
+	return render(request, 'pages/home.html', {'projects': projects, 'books': books, 'courses': courses, 'posts': posts})
