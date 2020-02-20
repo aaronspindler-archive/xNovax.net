@@ -1,3 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
+class ShortURL(models.Model):
+	short = models.CharField(max_length=16, primary_key=True)
+	target = models.URLField()
