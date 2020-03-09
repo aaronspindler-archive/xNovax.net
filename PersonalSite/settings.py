@@ -7,7 +7,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = False
-ALLOWED_HOSTS = ['xnovax.herokuapp.com', 'xnovax.net', 'www.xnovax.net']
+ALLOWED_HOSTS = ['xnovax.herokuapp.com', 'xnovax.net', 'www.xnovax.net', '127.0.0.1']
 
 # AWS
 AWS_STORAGE_BUCKET_NAME = 'personalsite-public'
@@ -31,6 +31,7 @@ INSTALLED_APPS = [
 	'django.contrib.sessions',
 	'django.contrib.messages',
 	'django.contrib.staticfiles',
+	'django.contrib.sitemaps',
 	'storages',
 	'pages.apps.PagesConfig',
 	'books.apps.BooksConfig',
