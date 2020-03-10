@@ -14,6 +14,7 @@ def url_shortener(request):
 			short = random_string.generate_short()
 
 			while True:
+				# TODO: Check if the target URL already exists and if it does, don't create another entry, just point to the old one
 				# Check if the short string already exists
 				check = ShortURL.objects.filter(short=short)
 				# If not save to DB
@@ -35,4 +36,6 @@ def url_shortened(request, pk):
 
 
 def password_generator(request):
+	if request.method == 'POST':
+		pass
 	return render(request, 'tools/password_generator.html')
