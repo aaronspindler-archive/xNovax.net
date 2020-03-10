@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from utils import random_string
 from .forms import ShortenURLForm
@@ -23,6 +23,8 @@ def url_shortener(request):
 				shortenedurl.target = form.cleaned_data['url']
 				shortenedurl.save()
 
+				return render(request, 'tools/url_shortened.html', {'shortenedurl': shortenedurl})
+
 			# If it does, generate another with length + 1
 			short = random_string.generate_short(len(short) + 1)
 
@@ -31,7 +33,8 @@ def url_shortener(request):
 
 
 def url_shortened(request, pk):
-	return render(request, 'tools/url_shortener.html')
+	short_url = ShortURL.objects.get(pk=pk)
+	return redirect(short_url.target)
 
 
 def password_generator(request):

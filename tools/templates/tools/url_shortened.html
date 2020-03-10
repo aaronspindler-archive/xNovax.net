@@ -1,0 +1,16 @@
+{% extends "pages/_base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    URL Shortned |
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h4>URL Shortener</h4>
+        <input class="form-control" type="text" value="{{ shortenedurl.target }}" readonly>
+        <br>
+        <p>Shortened To</p>
+        <input class="form-control" type="text" value="https://www.xnovax.net/{{ shortenedurl.pk }}" readonly>
+    </div>
+{% endblock %}
