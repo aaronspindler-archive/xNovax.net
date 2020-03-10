@@ -6,4 +6,4 @@ class ShortURL(models.Model):
 	target = models.URLField()
 	
 	def __str__(self):
-		return ("{} -> {}".format(self.short, self.target))
+		return "{} -> {}".format(self.short, self.target)
