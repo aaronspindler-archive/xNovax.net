@@ -29,6 +29,6 @@ urlpatterns = [
                   path('book/<int:pk>/', books.views.book_details, name='book_detail'),
                   path('course/<int:pk>/', courses.views.course_detail, name='course_detail'),
                   path('tools/shorten', tools.views.url_shortener, name='url_shortener'),
+                  path('passgenerator', tools.views.password_generator, name='password_generator'),
                   path('<str:pk>/', tools.views.url_shortened, name='url_shortened'),
-                  path('password', tools.views.password_generator, name='password_generator'),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
