@@ -28,4 +28,4 @@ class Book(models.Model):
         return reverse('book_detail', args=[str(self.pk)])
 
     class Meta:
-        ordering = ['pub_date']
+        ordering = ['-pub_date']
