@@ -7,12 +7,10 @@ class Book(models.Model):
     STATUS_CHOICES = (
     ('R','Read'),
     ('CR','Currently Reading'),
-    ('N','Next to Read'),
-    ('O','On List to Read'),
     )
 
     title = models.CharField(max_length=500)
-    status = models.CharField(max_length=2, choices=STATUS_CHOICES, default='O')
+    status = models.CharField(max_length=2, choices=STATUS_CHOICES, default='CR')
     subtitle = models.CharField(max_length=500, null=True)
     author = models.CharField(max_length=500)
     pub_date = models.DateTimeField()
@@ -28,3 +26,6 @@ class Book(models.Model):
 
     def get_absolute_url(self):
         return reverse('book_detail', args=[str(self.pk)])
+
+    class Meta:
+        ordering = ['pub_date']
