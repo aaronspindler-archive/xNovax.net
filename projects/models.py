@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.utils import timezone
 
 
 class Technology(models.Model):
@@ -10,6 +11,7 @@ class Technology(models.Model):
 
 
 class Project(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=500)
     short_description = models.CharField(max_length=140, blank=True)
     description = models.TextField()
@@ -22,3 +24,6 @@ class Project(models.Model):
 
     def get_absolute_url(self):
         return reverse('project_details', args=[str(self.pk)])
+
+    class Meta:
+        ordering = ['-created_at']
