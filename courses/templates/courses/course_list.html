@@ -1,0 +1,25 @@
+{% extends 'pages/_base.html' %}
+{% load static %}
+{% block title %}Course List{% endblock %}
+
+{% block content %}
+<div class="container">
+    <a name="courses"><h3>Courses I've Taken</h3></a>
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    {% for course in courses %}
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <div class="card-body">
+                                    <a href="{% url 'course_detail' course.pk %}"><h5 class="card-title">{{ course.title }}</h5></a>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{ course.instituition }}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}

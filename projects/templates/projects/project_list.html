@@ -1,0 +1,26 @@
+{% extends 'pages/_base.html' %}
+{% load static %}
+
+{% block title %}Project List{% endblock %}
+
+{% block content %}
+<div class="container">
+  <a name="projects"><h3>Projects</h3></a>
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    {% for project in projects %}
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <div class="card-body">
+                                    <a href="{% url 'project_details' project.pk %}"><h5 class="card-title">{{ project.title }}</h5></a>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{ project.short_description }}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}

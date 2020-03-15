@@ -1,0 +1,27 @@
+{% extends 'pages/_base.html' %}
+{% load static %}
+
+{% block title %}Book List{% endblock %}
+
+{% block content %}
+<div class="container">
+  <a name="books"><h3>Books I've Read</h3></a>
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    {% for book in books %}
+                        <div class="col-md-4">
+                            <div class="card mb-4 shadow-sm">
+                                <img class="card-img-top" width=200 src="{{ book.cover.url }}"/>
+                                <div class="card-body">
+                                    <a href="{% url 'book_detail' book.pk %}"><h5 class="card-title">{{ book.title }}</h5></a>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{ book.subtitle }}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}

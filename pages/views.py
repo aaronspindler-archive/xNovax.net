@@ -7,7 +7,7 @@ from utils import medium
 
 def home(request):
 	posts = medium.get_posts('aaron_spindler', 3)
-	projects = Project.objects.all()
-	books = Book.objects.all()
-	courses = Course.objects.all()
+	projects = Project.objects.all()[:3]
+	books = Book.objects.all()[:3]
+	courses = Course.objects.all()[:3]
 	return render(request, 'pages/home.html', {'projects': projects, 'books': books, 'courses': courses, 'posts': posts})
