@@ -1,12 +1,13 @@
-from django.contrib import admin
-from django.urls import path
 from django.conf import settings
-from django.contrib.sitemaps.views import sitemap
 from django.conf.urls.static import static
-import pages.views
-import projects.views
+from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
+from django.urls import path
+
 import books.views
 import courses.views
+import pages.views
+import projects.views
 import tools.views
 from books.sitemaps import BookSitemap
 from courses.sitemaps import CourseSitemap

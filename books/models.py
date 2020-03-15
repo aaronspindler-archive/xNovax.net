@@ -3,10 +3,9 @@ from django.urls import reverse
 
 
 class Book(models.Model):
-
     STATUS_CHOICES = (
-    ('R','Read'),
-    ('CR','Currently Reading'),
+        ('R', 'Read'),
+        ('CR', 'Currently Reading'),
     )
 
     title = models.CharField(max_length=500)
