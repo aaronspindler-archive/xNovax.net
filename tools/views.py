@@ -31,8 +31,11 @@ def url_shortener(request):
 
 
 def url_shortened(request, pk):
-    short_url = ShortURL.objects.get(pk=pk)
-    return redirect(short_url.target)
+    try:
+        short_url = ShortURL.objects.get(pk=pk)
+        return redirect(short_url.target)
+    except Exception:
+        pass
 
 
 def password_generator(request):

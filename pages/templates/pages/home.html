@@ -100,5 +100,22 @@
             <a class="btn btn-primary" href="{% url 'course_list' %}">See More</a>
             </div>
         </div>
+    <hr>
+        <a name="tech"><h3>Technologies I've Used</h3></a>
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row">
+                    {% for tech in technologies %}
+                        <div class="col-md-2">
+                            <div class="card mb-4 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ tech.name }}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
