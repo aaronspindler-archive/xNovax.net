@@ -6,7 +6,13 @@
 {% block content %}
     <div class="container">
         <h3>Photo Gallery</h3>
-        {% for category in categories %}
+        {% for event in events %}
+            <h5>{{ event.name }}</h5>
+            {% for image in event.photo_set.all %}
+                <img class="img-fluid" src="{{ image.image.url }}" width="500">
+                {% empty %}
+                <p>Looks like there are no images in this event!</p>
+            {% endfor %}
             {% empty %}
             <p>Looks like there are no photos at the moment!</p>
         {% endfor %}
