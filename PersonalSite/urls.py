@@ -6,6 +6,7 @@ from django.urls import path
 
 import books.views
 import courses.views
+import gallery.views
 import pages.views
 import projects.views
 import tools.views
@@ -19,13 +20,13 @@ sitemaps = {
     'project': ProjectSitemap,
     'course': CourseSitemap,
     'book': BookSitemap,
-
 }
 
 urlpatterns = [
                   path('', pages.views.home, name='home'),
                   path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
                   path('admin/', admin.site.urls, name='admin'),
+                  path('gallery', gallery.views.gallery, name='gallery'),
                   path('projects', projects.views.project_list, name='project_list'),
                   path('project/<int:pk>/', projects.views.project_details, name='project_details'),
                   path('books', books.views.book_list, name='book_list'),
