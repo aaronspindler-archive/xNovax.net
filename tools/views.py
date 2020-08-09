@@ -1,3 +1,4 @@
+from django.http import Http404
 from django.shortcuts import render, redirect
 
 from utils import random_string
@@ -35,7 +36,7 @@ def url_shortened(request, pk):
         short_url = ShortURL.objects.get(pk=pk)
         return redirect(short_url.target)
     except Exception:
-        pass
+        return Http404
 
 
 def password_generator(request):
