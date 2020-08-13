@@ -14,7 +14,7 @@ class Book(models.Model):
     author = models.CharField(max_length=500)
     pub_date = models.DateTimeField()
     purchase_link = models.URLField(null=True, blank=True)
-    favourite_passage = models.TextField(null=True)
+    favourite_passage = models.TextField(blank=True, null=True)
     cover = models.ImageField(upload_to='book/')
 
     def pub_date_pretty(self):
