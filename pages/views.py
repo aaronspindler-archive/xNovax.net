@@ -13,3 +13,7 @@ def home(request):
     courses = Course.objects.all()[:3]
     technologies = Technology.objects.all()
     return render(request, 'pages/home.html', {'projects': projects, 'books': books, 'courses': courses, 'posts': posts, 'technologies': technologies})
+
+
+def computer_gear(request):
+    return render(request, 'pages/computer_gear.html')
