@@ -4,22 +4,22 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-    initial = True
+	initial = True
 
-    dependencies = [
-    ]
+	dependencies = [
+	]
 
-    operations = [
-        migrations.CreateModel(
-            name='Course',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=255)),
-                ('instituition', models.CharField(max_length=500)),
-                ('course_code', models.CharField(blank=True, max_length=30, null=True)),
-                ('description', models.TextField()),
-                ('external_link', models.URLField(blank=True, null=True)),
-                ('certificate_link', models.URLField(blank=True, null=True)),
-            ],
-        ),
-    ]
+	operations = [
+		migrations.CreateModel(
+			name='Course',
+			fields=[
+				('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+				('title', models.CharField(max_length=255)),
+				('instituition', models.CharField(max_length=500)),
+				('course_code', models.CharField(blank=True, max_length=30, null=True)),
+				('description', models.TextField()),
+				('external_link', models.URLField(blank=True, null=True)),
+				('certificate_link', models.URLField(blank=True, null=True)),
+			],
+		),
+	]

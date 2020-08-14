@@ -7,18 +7,18 @@ from django.utils.timezone import utc
 
 
 class Migration(migrations.Migration):
-    dependencies = [
-        ('projects', '0003_project_deployment_link'),
-    ]
+	dependencies = [
+		('projects', '0003_project_deployment_link'),
+	]
 
-    operations = [
-        migrations.AlterModelOptions(
-            name='project',
-            options={'ordering': ['-created_at']},
-        ),
-        migrations.AddField(
-            model_name='project',
-            name='created_at',
-            field=models.DateTimeField(default=datetime.datetime(2020, 3, 15, 15, 29, 4, 158161, tzinfo=utc)),
-        ),
-    ]
+	operations = [
+		migrations.AlterModelOptions(
+			name='project',
+			options={'ordering': ['-created_at']},
+		),
+		migrations.AddField(
+			model_name='project',
+			name='created_at',
+			field=models.DateTimeField(default=datetime.datetime(2020, 3, 15, 15, 29, 4, 158161, tzinfo=utc)),
+		),
+	]

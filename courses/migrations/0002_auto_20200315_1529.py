@@ -7,18 +7,18 @@ from django.utils.timezone import utc
 
 
 class Migration(migrations.Migration):
-    dependencies = [
-        ('courses', '0001_initial'),
-    ]
+	dependencies = [
+		('courses', '0001_initial'),
+	]
 
-    operations = [
-        migrations.AlterModelOptions(
-            name='course',
-            options={'ordering': ['-created_at']},
-        ),
-        migrations.AddField(
-            model_name='course',
-            name='created_at',
-            field=models.DateTimeField(default=datetime.datetime(2020, 3, 15, 15, 29, 4, 155513, tzinfo=utc)),
-        ),
-    ]
+	operations = [
+		migrations.AlterModelOptions(
+			name='course',
+			options={'ordering': ['-created_at']},
+		),
+		migrations.AddField(
+			model_name='course',
+			name='created_at',
+			field=models.DateTimeField(default=datetime.datetime(2020, 3, 15, 15, 29, 4, 155513, tzinfo=utc)),
+		),
+	]

@@ -4,14 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-    dependencies = [
-        ('projects', '0002_project_short_description'),
-    ]
+	dependencies = [
+		('projects', '0002_project_short_description'),
+	]
 
-    operations = [
-        migrations.AddField(
-            model_name='project',
-            name='deployment_link',
-            field=models.URLField(blank=True, null=True),
-        ),
-    ]
+	operations = [
+		migrations.AddField(
+			model_name='project',
+			name='deployment_link',
+			field=models.URLField(blank=True, null=True),
+		),
+	]

@@ -4,17 +4,17 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-    initial = True
+	initial = True
 
-    dependencies = [
-    ]
+	dependencies = [
+	]
 
-    operations = [
-        migrations.CreateModel(
-            name='ShortURL',
-            fields=[
-                ('short', models.CharField(max_length=16, primary_key=True, serialize=False)),
-                ('target', models.URLField()),
-            ],
-        ),
-    ]
+	operations = [
+		migrations.CreateModel(
+			name='ShortURL',
+			fields=[
+				('short', models.CharField(max_length=16, primary_key=True, serialize=False)),
+				('target', models.URLField()),
+			],
+		),
+	]

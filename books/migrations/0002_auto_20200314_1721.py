@@ -4,18 +4,18 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-    dependencies = [
-        ('books', '0001_initial'),
-    ]
+	dependencies = [
+		('books', '0001_initial'),
+	]
 
-    operations = [
-        migrations.AlterModelOptions(
-            name='book',
-            options={'ordering': ['pub_date']},
-        ),
-        migrations.AlterField(
-            model_name='book',
-            name='status',
-            field=models.CharField(choices=[('R', 'Read'), ('CR', 'Currently Reading')], default='CR', max_length=2),
-        ),
-    ]
+	operations = [
+		migrations.AlterModelOptions(
+			name='book',
+			options={'ordering': ['pub_date']},
+		),
+		migrations.AlterField(
+			model_name='book',
+			name='status',
+			field=models.CharField(choices=[('R', 'Read'), ('CR', 'Currently Reading')], default='CR', max_length=2),
+		),
+	]

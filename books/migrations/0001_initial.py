@@ -4,24 +4,24 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-    initial = True
+	initial = True
 
-    dependencies = [
-    ]
+	dependencies = [
+	]
 
-    operations = [
-        migrations.CreateModel(
-            name='Book',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=500)),
-                ('status', models.CharField(choices=[('R', 'Read'), ('CR', 'Currently Reading'), ('N', 'Next to Read'), ('O', 'On List to Read')], default='O', max_length=2)),
-                ('subtitle', models.CharField(max_length=500, null=True)),
-                ('author', models.CharField(max_length=500)),
-                ('pub_date', models.DateTimeField()),
-                ('purchase_link', models.URLField(blank=True, null=True)),
-                ('favourite_passage', models.TextField(null=True)),
-                ('cover', models.ImageField(upload_to='book/')),
-            ],
-        ),
-    ]
+	operations = [
+		migrations.CreateModel(
+			name='Book',
+			fields=[
+				('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+				('title', models.CharField(max_length=500)),
+				('status', models.CharField(choices=[('R', 'Read'), ('CR', 'Currently Reading'), ('N', 'Next to Read'), ('O', 'On List to Read')], default='O', max_length=2)),
+				('subtitle', models.CharField(max_length=500, null=True)),
+				('author', models.CharField(max_length=500)),
+				('pub_date', models.DateTimeField()),
+				('purchase_link', models.URLField(blank=True, null=True)),
+				('favourite_passage', models.TextField(null=True)),
+				('cover', models.ImageField(upload_to='book/')),
+			],
+		),
+	]

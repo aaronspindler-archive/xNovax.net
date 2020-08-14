@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
+	dependencies = [
+		('books', '0003_auto_20200314_1727'),
+	]
 
-    dependencies = [
-        ('books', '0003_auto_20200314_1727'),
-    ]
-
-    operations = [
-        migrations.AlterField(
-            model_name='book',
-            name='favourite_passage',
-            field=models.TextField(blank=True, null=True),
-        ),
-    ]
+	operations = [
+		migrations.AlterField(
+			model_name='book',
+			name='favourite_passage',
+			field=models.TextField(blank=True, null=True),
+		),
+	]
