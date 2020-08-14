@@ -22,12 +22,12 @@
     <div class="container">
         <p class="text-center"><a href="#posts">Posts</a> - <a href="#projects">Projects</a> - <a href="#books">Books</a> - <a href="#courses">Courses</a></p>
         <a name="posts"><h3>Blog Posts</h3></a>
-        <div class="album py-5 bg-light">
+        <div class="album py-1 bg-light">
             <div class="container">
                 <div class="row">
                     {% for post in posts %}
                         <div class="col-md-4">
-                            <div class="card mb-4 shadow-sm">
+                            <div class="card shadow-sm">
                                 <img class="card-img-top" width=200 src="{{ post.thumbnail }}"/>
                                 <div class="card-body">
                                     <a href="{{ post.link }}"><h5 class="card-title">{{ post.title }}</h5></a>
@@ -35,21 +35,21 @@
                                 </div>
                             </div>
                         </div>
-                        {% empty %}
+                    {% empty %}
                         <p>Sorry, there are no posts at the moment!</p>
                     {% endfor %}
                 </div>
                 <a class="btn btn-primary" href="https://medium.com/@aaron_spindler">See More</a>
             </div>
         </div>
-    <hr>
+        <hr>
         <a name="projects"><h3>Most Recent Projects</h3></a>
-        <div class="album py-5 bg-light">
+        <div class="album py-1 bg-light">
             <div class="container">
                 <div class="row">
                     {% for project in projects %}
                         <div class="col-md-4">
-                            <div class="card mb-4 shadow-sm">
+                            <div class="card shadow-sm">
                                 <div class="card-body">
                                     <a href="{% url 'project_details' project.pk %}"><h5 class="card-title">{{ project.title }}</h5></a>
                                     <h6 class="card-subtitle mb-2 text-muted">{{ project.short_description }}</h6>
@@ -61,14 +61,14 @@
                 <a class="btn btn-primary" href="{% url 'project_list' %}">See More</a>
             </div>
         </div>
-    <hr>
+        <hr>
         <a name="books"><h3>Most Recent Books I've Read</h3></a>
-        <div class="album py-5 bg-light">
+        <div class="album py-1 bg-light">
             <div class="container">
                 <div class="row">
                     {% for book in books %}
                         <div class="col-md-4">
-                            <div class="card mb-4 shadow-sm">
+                            <div class="card shadow-sm">
                                 <img class="card-img-top" width=200 src="{{ book.cover.url }}"/>
                                 <div class="card-body">
                                     <a href="{% url 'book_detail' book.pk %}"><h5 class="card-title">{{ book.title }}</h5></a>
@@ -81,14 +81,14 @@
                 <a class="btn btn-primary" href="{% url 'book_list' %}">See More</a>
             </div>
         </div>
-    <hr>
+        <hr>
         <a name="courses"><h3>Most Recent Courses I've Taken</h3></a>
-        <div class="album py-5 bg-light">
+        <div class="album py-1 bg-light">
             <div class="container">
                 <div class="row">
                     {% for course in courses %}
                         <div class="col-md-4">
-                            <div class="card mb-4 shadow-sm">
+                            <div class="card shadow-sm">
                                 <div class="card-body">
                                     <a href="{% url 'course_detail' course.pk %}"><h5 class="card-title">{{ course.title }}</h5></a>
                                     <h6 class="card-subtitle mb-2 text-muted">{{ course.instituition }}</h6>
@@ -97,24 +97,16 @@
                         </div>
                     {% endfor %}
                 </div>
-            <a class="btn btn-primary" href="{% url 'course_list' %}">See More</a>
+                <a class="btn btn-primary" href="{% url 'course_list' %}">See More</a>
             </div>
         </div>
-    <hr>
+        <hr>
         <a name="tech"><h3>Technologies I've Used</h3></a>
         <div class="album py-5 bg-light">
             <div class="container">
-                <div class="row">
                     {% for tech in technologies %}
-                        <div class="col-md-2">
-                            <div class="card mb-4 shadow-sm">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ tech.name }}</h5>
-                                </div>
-                            </div>
-                        </div>
+                        <span class="badge badge-primary">{{ tech.name }}</span>
                     {% endfor %}
-                </div>
             </div>
         </div>
     </div>
