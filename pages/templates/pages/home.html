@@ -31,7 +31,7 @@
                                 <img class="card-img-top" width=200 src="{{ post.thumbnail }}"/>
                                 <div class="card-body">
                                     <a href="{{ post.link }}"><h5 class="card-title">{{ post.title }}</h5></a>
-                                    <h6 class="card-subtitle mb-2 text-muted">{{ post.pubDate }}</h6>
+                                    <h6 class="card-subtitle mb-2 text-muted">Post {{ post.pubDate | timesince }} ago</h6>
                                 </div>
                             </div>
                         </div>
