@@ -2,4 +2,9 @@ from django.contrib import admin
 
 from tools.models import ShortURL
 
-admin.site.register(ShortURL)
+
+class ShortURLAdmin(admin.ModelAdmin):
+    list_display = ('short', 'target')
+
+
+admin.site.register(ShortURL, ShortURLAdmin)
