@@ -22,7 +22,7 @@
     <div class="container">
         <p class="text-center"><a href="#posts">Posts</a> - <a href="#projects">Projects</a> - <a href="#books">Books</a> - <a href="#courses">Courses</a></p>
         <a name="posts"><h3>Recent Blog Posts</h3></a>
-        <div class="album py-1 bg-light">
+        <div class="album py-1">
             <div class="container">
                 <div class="row">
                     {% for post in posts %}
@@ -44,7 +44,7 @@
         </div>
         <hr>
         <a name="projects"><h3>Recent Projects</h3></a>
-        <div class="album py-1 bg-light">
+        <div class="album py-1">
             <div class="container">
                 <div class="row">
                     {% for project in projects %}
@@ -63,7 +63,7 @@
         </div>
         <hr>
         <a name="books"><h3>Books I have read recently</h3></a>
-        <div class="album py-1 bg-light">
+        <div class="album py-1">
             <div class="container">
                 <div class="row">
                     {% for book in books %}
@@ -80,7 +80,7 @@
         </div>
         <hr>
         <a name="courses"><h3>Recent Courses</h3></a>
-        <div class="album py-1 bg-light">
+        <div class="album py-1">
             <div class="container">
                 <div class="row">
                     {% for course in courses %}
@@ -99,7 +99,7 @@
         </div>
         <hr>
         <a name="tech"><h3>Technologies I've Used</h3></a>
-        <div class="album py-5 bg-light">
+        <div class="album py-5">
             <div class="container">
                     {% for tech in technologies %}
                         <span class="badge badge-primary">{{ tech.name }}</span>
