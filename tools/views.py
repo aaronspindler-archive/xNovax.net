@@ -15,7 +15,6 @@ def url_shortener(request):
 			short = random_string.generate_short()
 
 			while True:
-				# TODO: Check if the target URL already exists and if it does, don't create another entry, just point to the old one
 				# Check if the short string already exists
 				check = ShortURL.objects.filter(short=short)
 				# If not save to DB
