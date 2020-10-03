@@ -74,7 +74,7 @@
                         </div>
                     {% endfor %}
                 </div>
-            <br>
+                <br>
                 <a class="btn btn-primary" href="{% url 'book_list' %}">See More</a>
             </div>
         </div>
@@ -94,6 +94,7 @@
                         </div>
                     {% endfor %}
                 </div>
+                <br>
                 <a class="btn btn-primary" href="{% url 'course_list' %}">See More</a>
             </div>
         </div>
@@ -101,9 +102,9 @@
         <a name="tech"><h3>Technologies I've Used</h3></a>
         <div class="album py-5">
             <div class="container">
-                    {% for tech in technologies %}
-                        <span class="badge badge-primary">{{ tech.name }}</span>
-                    {% endfor %}
+                {% for tech in technologies %}
+                    <span class="badge badge-primary">{{ tech.name }}</span>
+                {% endfor %}
             </div>
         </div>
     </div>
