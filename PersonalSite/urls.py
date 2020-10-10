@@ -10,6 +10,7 @@ import gallery.views
 import pages.views
 import projects.views
 import tools.views
+
 from books.sitemaps import BookSitemap
 from courses.sitemaps import CourseSitemap
 from pages.sitemaps import PageSitemap
@@ -35,6 +36,5 @@ urlpatterns = [
 				path('courses', courses.views.course_list, name='course_list'),
 				path('course/<int:pk>/', courses.views.course_detail, name='course_detail'),
 				path('tools/shorten', tools.views.url_shortener, name='url_shortener'),
-				path('passwordgenerator', tools.views.password_generator, name='password_generator'),
 				path('<str:pk>/', tools.views.url_shortened, name='url_shortened'),
 			] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

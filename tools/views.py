@@ -36,9 +36,3 @@ def url_shortened(request, pk):
 		return redirect(short_url.target)
 	except Exception:
 		return HttpResponseNotFound("Not Found")
-
-
-def password_generator(request):
-	if request.method == 'POST':
-		pass
-	return render(request, 'tools/password_generator.html')
