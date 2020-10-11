@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 	'utils.apps.UtilsConfig',
 	'tools.apps.ToolsConfig',
 	'gallery.apps.GalleryConfig',
+	'security.apps.SecurityConfig',
 ]
 
 MIDDLEWARE = [

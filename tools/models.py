@@ -9,6 +9,6 @@ class ShortURL(models.Model):
 		return "{} -> {}".format(self.short, self.target)
 
 
-class Image(models.Model):
-	fingerprint = models.TextField()
-	image = models.ImageField(upload_to='gallery/')
+# class Image(models.Model):
+# 	fingerprint = models.TextField()
+# 	image = models.ImageField(upload_to='gallery/')
