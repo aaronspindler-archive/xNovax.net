@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
-from django.urls import path
+from django.urls import path, include
 
 import books.views
 import courses.views
@@ -38,4 +38,6 @@ urlpatterns = [
 				path('tools/shorten', tools.views.url_shortener, name='url_shortener'),
 				path('<str:pk>/', tools.views.url_shortened, name='url_shortened'),
 				path('tools/image', tools.views.image_home, name='image_home'),
+				# Security
+				path('security/', include('security.urls')),
 			] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
