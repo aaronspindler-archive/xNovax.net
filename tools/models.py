@@ -7,3 +7,8 @@ class ShortURL(models.Model):
 
 	def __str__(self):
 		return "{} -> {}".format(self.short, self.target)
+
+
+class Image(models.Model):
+	fingerprint = models.TextField()
+	image = models.ImageField(upload_to='gallery/')

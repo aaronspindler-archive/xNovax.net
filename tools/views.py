@@ -36,3 +36,7 @@ def url_shortened(request, pk):
 		return redirect(short_url.target)
 	except Exception:
 		return HttpResponseNotFound("Not Found")
+
+
+def image_home(request):
+	return render(request, 'tools/image_home.html')

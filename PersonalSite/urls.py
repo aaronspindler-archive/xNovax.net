@@ -37,4 +37,5 @@ urlpatterns = [
 				path('course/<int:pk>/', courses.views.course_detail, name='course_detail'),
 				path('tools/shorten', tools.views.url_shortener, name='url_shortener'),
 				path('<str:pk>/', tools.views.url_shortened, name='url_shortened'),
+				path('tools/image', tools.views.image_home, name='image_home'),
 			] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

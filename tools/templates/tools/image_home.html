@@ -1,0 +1,18 @@
+{% extends "pages/_base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+    Image Modifier
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <br>
+        <h4>Image Modifier</h4>
+        <form method="post">
+            {% csrf_token %}
+            {{ form | crispy}}
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+    </div>
+{% endblock %}
