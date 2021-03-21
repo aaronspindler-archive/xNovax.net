@@ -1,7 +1,9 @@
 import os
 import sys
-
+import sentry_sdk
 import dj_database_url
+
+from sentry_sdk.integrations.django import DjangoIntegration
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -76,6 +78,20 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'PersonalSite.wsgi.application'
+
+sentry_sdk.init(
+    dsn="https://5ae05598003a4636a520de0e16be4f2e@o555567.ingest.sentry.io/5685525",
+    integrations=[DjangoIntegration()],
+
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    # We recommend adjusting this value in production.
+    traces_sample_rate=1.0,
+
+    # If you wish to associate users to errors (assuming you are using
+    # django.contrib.auth) you may enable sending PII data.
+    send_default_pii=True
+)
 
 DATABASES = {
 	'default': dj_database_url.config()
